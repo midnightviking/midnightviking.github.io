@@ -1,0 +1,18 @@
+@use "sass:map";
+@use "sass:math";
+
+$breakpoints : (
+    "large"  : 1200px,
+    "medium" : 1024px,
+    "small"  : 769px,
+    "xsmall" : 450px
+);
+
+@mixin mq($break){
+	@if map-has-key($breakpoints,$break){
+		@media (min-width: map-get($breakpoints, $break)) {
+			@content;
+		}
+	}
+}
+

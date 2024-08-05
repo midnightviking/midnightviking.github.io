@@ -1,0 +1,21 @@
+$fontlist : (
+	// 'Encode+Sans+Semi+Condensed:wght@400&',
+	'Roboto',
+	'Georama'
+);
+
+$fonturl : "https://fonts.googleapis.com/css2?display=swap";
+@each $font in $fontlist {
+	$fonturl : $fonturl  + "&family=" + $font;
+}
+@debug $fonturl;
+@import url($fonturl);
+
+
+// @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&family=Georama&display=swap');
+
+
+$patrickSC : 'Patrick Hand SC';
+$roboto: 'Roboto', 'Open Sans', sans-serif;
+$georama : 'Georama', 'Roboto', sans-serif;
+$spacemono: 'Encode Sans Semi Condensed', 'Courier New ' , monospace;

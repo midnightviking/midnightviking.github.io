@@ -1,0 +1,304 @@
+.vertical_header{
+	
+	background: #efefef;	
+	color:#333;	
+	margin-left:5vw;
+	padding:20px 10px;
+	
+	border-bottom:3px solid rgba($beardRed,1);
+	margin-right:5vw;
+
+	@include mq("xsmall"){
+		display:flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	/*Sizes*/
+	@include mq("small"){
+		text-align:center;
+		margin-left:0;
+		width:29vw;
+		display: block;			
+		height:100vw;
+		position:fixed;
+		flex-direction: column;
+		border-bottom:none;
+		margin-right:0;
+	}
+
+	h1,h2,h3, h4{
+		font-family: f.$georama;
+	}
+
+	.avatar{
+		display:block;		
+		position: relative;
+		flex:1 2;
+		text-align: left;
+		// transition: 0.25s all;
+		
+
+		svg{
+			max-width:150px;
+			max-height:200px;
+		}
+		
+		@include mq("xsmall"){
+			text-align: center;
+
+		}
+		@include mq("small"){
+			text-align:center;
+			// opacity:0;
+			svg{
+				max-width: 100%;
+				// max-height: 40vmax;
+			}
+		}
+
+		@include mq("medium"){
+			margin-left:0%;
+			svg{
+				max-height: 20vmax;
+			}
+		}
+
+	}
+	// wrapper for the experience information
+	.info{
+		position: relative;
+		align-items: center;
+		flex:2 0;
+		@include mq("xsmall"){
+			padding-top:30px;
+		}
+		@include mq("small"){
+			padding-top:0px;
+		}
+	}
+	.my-name{
+		// font-size:3.0rem;
+		margin:0;
+		font-family: f.$georama;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		font-size: 3em;
+		font-size: clamp(1em, 1em + 3vmin, 4em);
+		line-height: 1.5em;
+		font-weight: 400;
+		letter-spacing: -0.03em;
+		text-decoration: inherit;
+		text-transform: inherit;
+		@include mq('small'){
+			line-height:1em;
+		}
+		// text-transform: uppercase;
+	}
+
+	.subtitle{
+		margin:14px 0;
+		font-size:1.65rem;
+		// letter-spacing: 1px;
+		font-weight:400;
+	}
+
+	ul{		
+		margin:0;
+		padding:0;
+		max-width:50%;
+		margin:auto;
+		text-align:left 
+	}
+
+	hr{
+		background:$beardRed;
+		width:150px;
+		fill:$beardRed;
+		height:4px;
+		margin:20px auto 10px;
+		border:none;
+		display:none;
+		@include mq('small'){
+			display:block;
+		}
+	}
+
+	.primary-skills{
+		color:#666;
+		font-size:0.9em;
+		flex:1 1 50%;
+		text-align: center;
+		@include mq("small"){
+			padding:0.5em 0;
+			
+		}
+	}
+	.lb{
+		flex:2 0;
+		flex-basis: 100%;
+	}
+	.looking-for{
+		font-size:0.95em;  
+		color:rgba(22, 105, 172, 1);
+		@include mq("small"){
+			padding:1em 0.25em;			
+		}
+	}
+	.looking-for, .primary-skills{
+		flex: 1 1 100%;
+		text-align: left;
+		@include mq("xsmall"){
+			text-align: center;
+			flex:1 1 100%;
+		}
+	}
+
+	.year2{    
+		letter-spacing:0px;
+		display:block;
+		font-family: f.$roboto;
+		display:flex;
+		align-items: flex-end;
+		
+		>div{			
+			@include mq("medium"){
+				flex:0 1;
+				// flex-direction:column;
+				justify-content:flex-end;
+				
+			}
+		}
+		
+		@include mq("small"){
+			margin:3vmin auto;
+			flex-direction: column;
+		}
+		
+		@include mq("medium"){
+			flex-direction: row;
+			min-width:250px;
+			max-width:400px;
+			justify-content: center;   
+		}
+		
+		.role{			
+			// text-align: center;
+			display: inline-block;
+			width:100%;
+			.first-line{
+				display:inline;
+				padding:10px 0;
+				// border-top:3px solid #777;
+				font-size:1.5rem;
+				font-size: clamp(0.7rem, 2.5rem , 9vmin);
+				line-height:0.85em;
+				font-weight:bold;
+
+			}
+
+			.second-line{
+				display: block;
+				font-size:1rem;
+				font-size: clamp(1rem, 1.5rem + 1vw, 24px);
+				line-height:1rem;
+				padding:8px 4px;
+
+				background:rgba($beardRed, 0.6);
+				@include mq("small"){
+				}
+				
+			}
+			/*Specific hitch*/
+			@media (min-width: 450px) and (max-width:510px)  {
+				.first-line{
+					font-size:1.65rem;
+				}
+				.second-line{
+					font-size:1.3rem;
+				}
+			}
+			
+			@include mq("small"){
+				.first-line, .second-line{
+					display: inline-block;
+				}
+			}
+			
+			@include mq("medium"){               
+				padding-left: 5px;
+				white-space:nowrap;
+				text-align:left;
+				
+				.first-line{
+					line-height: clamp(1rem, 1rem + 3vw, 24px);
+					padding: 8px 0 0 0;
+					border-top:none;
+				}
+				
+				.second-line{
+					display:block;
+					line-height:1em;
+					
+				}
+			}
+			
+			
+			
+		}
+		.exp{
+
+			letter-spacing:-4px;
+			display:inline-block;
+			padding:10px 5px;
+			font-size:3rem;
+			// border-right:3px solid #222;
+			margin-right:10px;
+			// padding: 10px 20px 5px 5px;
+			background:rgba(99,105,135, 0.8);
+			background:rgba(0,0,0, 0.8);
+			line-height: inherit;
+			color:white;
+			
+			@include mq("small"){
+				font-size: clamp(3rem + 2vw, 1rem + 2vw, 40px);
+				// display: block;
+				justify-content: center;
+				text-align:center;
+				border:none;
+				align-self:center;
+				line-height: 100%;
+			}
+			
+			@include mq("medium"){
+				letter-spacing:-6px;
+				font-size: clamp(1rem + 2vw, 1.5rem + 2vw, 48px);
+				line-height:0.65em;
+				border-right:3px solid #222;
+				padding: 10px 20px 5px 10px;
+				
+			}
+			
+			>span{ 
+				font-size:1rem;
+				font-size: clamp(1rem, 1rem + 3vw, 20px);
+				display:inline;
+				text-align:left;
+				letter-spacing:1px;
+				line-height:0.95em;
+				padding: 5px;
+
+				@include mq("medium"){
+					padding:5px 0px 10px 10px;
+					display:block;
+					padding-left:0px;
+					text-align:right;				
+				}
+			}
+			
+			
+		}
+		
+	}
+}

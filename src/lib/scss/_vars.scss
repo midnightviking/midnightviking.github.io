@@ -1,0 +1,32 @@
+$pal1 : true;
+$pal2 : false;
+$palette:(
+	'primary'	: rgba(81, 45, 36, 1), 
+		'secondary'	: rgba(111, 52, 84, 1), 
+		'accent1'	: rgba(109, 106, 156, 1), 
+		'accent2'	: rgba(144, 165, 208, 1), 
+		'accent3'	: rgba(200, 216, 234, 1), 
+);
+
+@if($pal1){
+	$palette : (
+		'primary'	: rgba(76, 92, 104, 1), 
+		'secondary'	: rgba(25, 133, 161, 1), 
+		'accent1'	: rgba(70, 73, 76, 1), 
+		'accent2'	: rgba(197, 195, 198, 1), 
+		'accent3'	: rgba(220, 220, 221, 1), 
+		 
+	);
+}
+
+@if($pal2){
+	$palette : (
+		'primary'	: rgba(22, 105, 122, 1), 
+		'secondary'	: rgba(72, 159, 181, 1), 
+		'accent1'	: rgba(130, 192, 204,1 ), 
+		'accent2'	: rgba(237, 231, 227, 1), 
+		'accent3'	: rgba(255, 166, 43, 1), 	
+	);
+}
+
+$beardRed : #d96c47;

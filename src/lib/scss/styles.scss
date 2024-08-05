@@ -1,0 +1,428 @@
+@use "sass:map";
+@use "sass:math";
+@use 'partials/fonts' as f;
+@import 'partials/animation';
+@import 'vars';
+@import 'mixins';
+@import 'header';
+
+body{
+	// background:map-get($palette, 'accent3 );
+	background:#eee;
+	color:#333;
+	font-family: f.$roboto;
+	-webkit-font-smoothing: antialiased;	
+	font-weight: 400;
+	text-decoration: inherit;
+	text-transform: inherit;
+	font-size:16px;
+	line-height:1.75rem;
+	letter-spacing: 0.03125em;
+
+
+	@include mq("small"){
+		font-size:1.1rem;
+		line-height: 1.75rem;
+	}
+	@include mq("medium"){
+		font-size:1.2rem;
+		line-height: 2rem;
+		letter-spacing: 0.03125em;
+	}
+
+
+}
+p {
+//   font-size: 16px/1.5em;
+margin-bottom:1.5rem;
+}
+
+::placeholder {
+  color:$beardRed;
+  font-size: 1.15em;
+}
+
+
+strong, small{
+	font-family: f.$georama;
+	// text-transform: uppercase;
+}
+
+input, textarea, select, button {
+	    box-sizing: border-box;
+
+}
+
+h1,h2,h3,h4,h5{
+	// font-family: f.$roboto, sans-serif;
+	font-family: f.$georama sans-serif;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;	
+	letter-spacing: normal;		
+	text-decoration: inherit;
+	text-transform: inherit;
+	letter-spacing: 1px;
+	font-weight:normal;
+
+	
+}
+
+.hide-for-small{
+	display:none;
+	@include mq("small"){
+		display:inherit;
+	}
+}
+
+main{
+	// margin:auto;
+	display: flex;
+	flex-direction: column;	
+}
+
+.patfont {
+	font-family: f.$patrickSC;
+}
+
+.box{
+	border-bottom:2px solid #cdcdcd;
+	padding:1em 0.5em;
+	// margin:1em 0;
+	
+	& > div:not(:first-child) {
+		padding:0.5em;
+		
+	}
+	
+}
+
+.workplace{
+	
+	padding:0.25em 1em 0.5em 1.5em;
+
+	// margin-top:0.25em; 
+	// border-bottom:#666 1px dashed;
+	// padding:1em;
+	.work-title{
+		margin:1.5rem 0 0 0;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;		
+		font-size: 1.5em;		
+		line-height: 1.5rem;		
+		font-weight: 400;		
+		letter-spacing: normal;		
+		text-decoration: inherit;
+		text-transform: inherit;	
+		position: relative;
+		z-index: 2;
+
+		@include mq("small"){
+			font-size:1.5rem;
+			line-height: 1.5rem;
+		}
+		@include mq("medium"){
+			font-size:1.75rem;
+			line-height: 2rem;
+			letter-spacing: 0.03125em;
+		}
+		
+	}
+
+	.work-date{
+		margin:0;
+		padding:0;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+ 		font-size: 0.75rem;
+ 		
+ 		line-height: 2rem;
+		font-weight: 700;
+		letter-spacing: 0.1rem;
+		text-decoration: none;
+		text-transform: uppercase;
+		color:#d96c47;
+		position: relative;
+		z-index: 2;
+		&::before{
+			content:'';
+			// border:1px solid;
+			width:20%;
+			height:10px;
+			position: absolute;
+			left:0px;
+			bottom:-1em;
+			background:rgba($beardRed, 0.3);
+			z-index: -1;
+		}
+		@include mq("small"){
+			letter-spacing: 0.167rem;
+			font-size: 0.85rem;
+		}
+	}
+
+	.description{
+		p{
+			// margin:0.25em 0 0.75em 0;
+			// padding:0;
+			// font-size: 1.2em;
+		}
+	}
+	
+	&:last-child{
+		border-bottom:none;
+	}
+
+	&:nth-child(odd){
+		background:#fdfdfd;
+		// background:#f7f7f7;
+		
+	}
+
+}
+
+.obfuscarios{
+	unicode-bidi: bidi-override;
+	direction: rtl;
+}
+a{
+	color:$beardRed;
+}
+a:hover{
+	text-decoration: none;
+	cursor: pointer;
+
+}
+
+.main_style2{
+	width:100%;
+	height:100%;
+	
+	.mainContent{
+		margin-left:5vw;
+		width:90vw;
+
+		section{
+			padding:1.5rem 1rem;
+			
+			border-bottom:1px solid $beardRed;
+			&.workplaces{
+				// border-bottom:none;
+				padding:1.5rem 0rem;
+			}
+
+
+			@include mq("small"){
+				margin-right: 1rem;
+			}
+
+		}
+
+	}
+
+	.vertical_header{
+		// display: none;
+	}
+
+	@include mq("small"){
+		.mainContent{
+			margin-left:32vw;
+			width:66vw;
+			
+			h2{
+				font-size:1.5em;
+			}
+			
+		}
+	}
+	@include mq("medium"){
+		width:25vw;		
+	}
+
+	@include mq("medium"){
+		.mainContent{
+			margin-left:30vw;
+			// width:70vw;
+			max-width: 800px;
+			max-width:80ch;
+			
+			h2{
+				font-size:2em;
+				margin:0.5em 0 0.5em 0;
+				font-weight: 400;
+				// text-transform: uppercase;
+				letter-spacing: 1px;
+				font-family: f.$georama;
+			}
+			
+		}
+		
+		
+	}
+
+
+}
+
+section{
+	
+	// margin:1em 0;
+}
+
+section.skills{
+	padding:1em 0 0 0;
+	h2{
+		font-size:1.75em;
+		margin:0;
+		padding:0;
+		font-weight: 400;
+		// text-transform: uppercase;
+		// letter-spacing: 1px;
+	}
+	
+	.skills-list{
+		
+		> .column{
+			padding:0.25em 0 1em 0;
+			h3{
+				text-transform: uppercase;
+				font-size:1.1rem;
+				margin:0.25em 0 0 0;
+				color:$beardRed;
+			}
+			
+			ul{
+				margin:0;
+				padding:0.5em;
+				padding-left:0;
+				list-style-type: none;
+
+				li{
+					margin:0;
+					padding:0;
+					font-family: f.$georama;
+					// font-family: f.$spacemono;
+					font-size: 1em;
+					line-height:2em;
+					// letter-spacing: -1px;					
+				}
+			}
+
+			&.full-col{
+				grid-column: span 2;
+			}
+
+			&.double-list{
+				// display:block;
+
+				> ul{
+					
+				}
+			}
+		}
+		
+	}
+	@include mq("medium"){
+		.skills-list{
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			.full-col{
+				
+				
+			}
+			.double-list{
+				display:grid;
+				grid-template-rows: auto;
+				grid-template-areas: 
+					"header header"
+					"col col";
+				h3{
+					grid-area:header;
+				}
+				ul{
+					// border:1px solid green;
+				}
+			}
+		}
+	}
+
+
+}
+
+.successMessage, .errorMessage{
+	padding:10px 20px;
+	font-size:1em;
+	color:white;
+	transition: all 0.25s ease-in;
+
+}
+.successMessage{
+	background:rgba(55, 200, 0, 0.8);
+}
+
+.errorMessage{
+	background:rgba(200, 0, 0, 0.8);
+}
+
+section.contact{
+	transition: all 0.25s ease-in-out;
+	label{
+		display:block;
+	}
+	/* Fields */
+	::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+		color:    #aaa;
+	}
+	:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		color:    #aaa;
+		opacity:  1;
+	}
+	::-moz-placeholder { /* Mozilla Firefox 19+ */
+		color:    #aaa;
+		opacity:  1;
+	}
+	:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		color:    #aaa;
+	}
+	::-ms-input-placeholder { /* Microsoft Edge */
+		color:    #aaa;
+	}
+
+	input , select, textarea{
+		padding:0.5em;
+		font-size:1.15em;
+		width:100%;
+		margin:0.5em 0;
+		
+		
+		&:focus{
+			
+			outline-color: $beardRed;
+			
+		}
+
+	}
+
+	textarea{
+		height:150px;
+	}
+	.obfuscarios{
+		font-weight: bold;
+	}
+
+	/* Button */
+	button {
+		background-color: $beardRed;
+		border: none;
+		color: #fff;
+		font-size: 1.25em;
+		padding: 20px 50px;
+		text-transform: uppercase;
+		font-weight: normal;
+		font-family: f.$georama;
+		margin: 1em 0;
+		width:100%;
+		cursor: pointer;
+
+		
+	}
+
+}
